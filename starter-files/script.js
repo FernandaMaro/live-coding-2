@@ -12,6 +12,15 @@ const API_ENDPOINT = 'https://yesno.wtf/api';
  *
  */
 
-
+document.getElementById("button").addEventListener("click", function(){
+    fetch('https://yesno.wtf/api')
+    .then(response => response.json())
+    .then(data=>{
+        document.getElementById("answer").textContent=data.answer
+        setTimeout(function() {
+            document.getElementById("answer").textContent = '';
+        }, 3000); 
+    })
+    })
 
 
